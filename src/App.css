@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+*,
+*::after,
+*::before {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+}
+body {
+  background-color: white;
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Inter", sans-serif !important;
+}
+a:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+/************* Login ********************/
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f1f2f6;
+  text-align: center;
+}
+.logo {
+  object-fit: contain;
+  height: 6rem;
+  padding-bottom: 1rem;
+}
+.form-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 43rem;
+  width: 23rem;
+}
+.login-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 36rem;
+  width: 23rem;
+}
+.copyright {
+  margin-top: 1rem;
+}
+.login-links {
+  color: #3790ee;
+  padding: 0.5rem 0;
+}
+/************** Add Organization *****************/
+.org-container {
+  padding: 2rem;
+}
+.add-organization {
+  background-color: white;
+  height: 100vh;
+}
+
+/*************** Dashboard **************************/
+.dashboard {
+  height: 100%;
+}
+.dashboard-right {
+  margin-left: 300px;
+  background-color: white;
+  height: 100vh;
+  height: 100%;
+  padding: 2rem;
+}
+.dashboard-shortcuts {
+  margin-top: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.dashboard-container {
+  height: 92.5vh;
+}
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+/********* Sidebar usermenu **************/
+.sidebar {
+  width: 300px;
+}
+.user {
+  background-color: white;
+  width: 300px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+.usermenu {
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-bellicon {
+  padding: 0.6rem;
+}
+.user-bellicon:hover {
+  background-color: #f1f2f6;
+}
+.user-details {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-avatar {
+  padding-right: 2rem;
+  animation: alternate;
+}
+/****************** AddItems ****************************/
+/********* modal ***************/
+.m-1 {
+  margin: 1rem;
+}
+.m-0 {
+  margin: 0.5rem;
+}
+.p-0 {
+  padding: 0.5rem;
+}
+.m-3 {
+  margin: 3rem;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.ml-3 {
+  margin-left: 3rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.ml-1 {
+  margin-left: 1rem;
+}
+.fullwidth {
+  width: 100% !important;
+}
+
+.emptycardbox {
+  width: 10rem;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.w-48 {
+  width: 48%;
+}
+
+.fullheight {
+  height: 100%;
+}
+.fullvh {
+  height: 100%;
+}
+.mt-40 {
+  margin-top: 40%;
+}
+/****************** Drag-Drop ******************/
+.MuiDropzoneArea-root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #130f40;
+  border: none;
+  color: white;
+}
+.btn {
+  cursor: pointer;
+}
