@@ -1,16 +1,16 @@
 import {
   CLR_RESPONSE_MESSAGE,
-  RES_MESSAGE,
+  RES_SUCCESS_MESSAGE,
   SET_ITEM_ERROR_MSG,
   SET_RES_ERROR_MSG,
 } from "./types";
 
 /**
- * @desc response message
+ * @desc Res Success Message
  */
-export const resMessage = (payload) => {
+export const setSuccessMessage = (payload) => {
   return {
-    type: RES_MESSAGE,
+    type: RES_SUCCESS_MESSAGE,
     payload,
   };
 };

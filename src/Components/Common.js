@@ -462,3 +462,22 @@ export const MessageBox = styled.div`
   display: flex;
   padding: 2rem 0;
 `;
+
+export const Card = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
+export const CardItem = styled.div`
+  margin: 1rem;
+  display: flex;
+  width: 16rem;
+  height: 10rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  justify-content: center;
+  align-items: center;
+`;

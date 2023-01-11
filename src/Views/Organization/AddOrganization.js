@@ -11,9 +11,8 @@ import { Country, State, City } from "country-state-city";
 import { useFormik } from "formik";
 import { createOrgSchema } from "../../Schema/CreateOrgSchema";
 import { useDispatch } from "react-redux";
-import { setOrganizationData } from "../../Services/OrganizationService";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { createOrganization } from "../../Services/CompanyService";
 
 const initialValues = {
   name: "",
@@ -39,7 +38,7 @@ const AddOrganization = () => {
     validationSchema: createOrgSchema,
     onSubmit: (values) => {
       console.log("val", values);
-      dispatch(setOrganizationData(values));
+      dispatch(createOrganization(values));
       navigate("/dashboard/overview");
     },
   });

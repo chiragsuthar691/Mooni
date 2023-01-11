@@ -16,14 +16,14 @@ const DashboardOverview = () => (
         <ToggleButton>
           <WhiteDiv>
             <FirstBtn>
-              <Link to="/dashboard/overview" className="margin-1">
+              <Link to="/overview" className="margin-1">
                 <Tab label="Get Things Done" />
               </Link>
             </FirstBtn>
           </WhiteDiv>
           <WhiteDiv>
             <Backtab>
-              <Link to="/dashboard/BussinesOverview" className="margin-1">
+              <Link to="/BussinesOverview" className="margin-1">
                 <Tab label="Business overview" />
               </Link>
             </Backtab>

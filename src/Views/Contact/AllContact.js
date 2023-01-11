@@ -19,7 +19,7 @@ import AddBroker from "./AddBroker";
 import Filter from "./Filter";
 import EmptyCardBox from "../../Assets/empty-cardboard-box.png";
 
-const Contact = () => {
+const AllContact = () => {
   const popupRef = useRef(null);
   const [isFilter, setIsFilter] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
@@ -115,4 +115,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default AllContact;

@@ -22,7 +22,7 @@ const ForgotPassword = () => {
   const navigate = useNavigate();
   const authSelector = useSelector((state) => state.auth);
   const { loading } = authSelector;
-  const messageSelector = useSelector((state) => state.Message);
+  const messageSelector = useSelector((state) => state.message);
   const { res_message, clr_res_message } = messageSelector;
 
   const { handleBlur, handleChange, handleSubmit, errors, values, touched } =

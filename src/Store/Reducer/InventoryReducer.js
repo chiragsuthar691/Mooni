@@ -34,7 +34,7 @@ const initialState = {
   },
 };
 
-const InventoryReducer = (state = initialState, action) => {
+const inventoryReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_INVENTORY_LOADING:
       return { ...state, loading: action.payload };
@@ -53,4 +53,4 @@ const InventoryReducer = (state = initialState, action) => {
   }
 };
 
-export default InventoryReducer;
+export default inventoryReducer;

@@ -1,14 +1,14 @@
 import { combineReducers } from "redux";
 import authReducer from "./AuthReducer";
-import InventoryReducer from "./InventoryReducer";
-import MessageReducer from "./MessageReducer";
-import OrgnizationReducer from "./OrgnizationReducer";
+import companyReducer from "./CompanyReducer";
+import inventoryReducer from "./InventoryReducer";
+import messageReducer from "./MessageReducer";
 
 const reducer = combineReducers({
   auth: authReducer,
-  Orgnization: OrgnizationReducer,
-  Inventory: InventoryReducer,
-  Message: MessageReducer,
+  inventory: inventoryReducer,
+  message: messageReducer,
+  company: companyReducer,
 });
 
 export default reducer;

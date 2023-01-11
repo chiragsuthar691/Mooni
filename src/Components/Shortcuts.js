@@ -23,7 +23,7 @@ const Shortcuts = () => {
         </div>
         <div className="grid">
           <InvisibleBox>
-            <Link to="/dashboard/additem">
+            <Link to="/additem">
               <SmallBox>
                 <InventoryIcon fontSize="large" />
               </SmallBox>
@@ -31,7 +31,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/contact/all">
+            <Link to="/contact/all">
               <SmallBox>
                 <ContactsIcon fontSize="large" />
               </SmallBox>
@@ -39,7 +39,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/journal-transactions">
+            <Link to="/journal-transactions">
               <SmallBox>
                 <ReceiptLongIcon fontSize="large" />
               </SmallBox>
@@ -47,7 +47,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/cash-bank">
+            <Link to="/cash-bank">
               <SmallBox>
                 <AccountBalanceIcon fontSize="large" />
               </SmallBox>
@@ -55,7 +55,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/sales">
+            <Link to="/sales">
               <SmallBox>
                 <MonetizationOnIcon fontSize="large" />
               </SmallBox>
@@ -63,7 +63,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/purchase">
+            <Link to="/purchase">
               <SmallBox>
                 <ShoppingBasketIcon fontSize="large" />
               </SmallBox>
@@ -71,7 +71,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/credit-notes">
+            <Link to="/credit-notes">
               <SmallBox>
                 <PaymentsIcon fontSize="large" />
               </SmallBox>
@@ -79,7 +79,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/debit-notes">
+            <Link to="/debit-notes">
               <SmallBox>
                 <RequestQuoteIcon fontSize="large" />
               </SmallBox>
@@ -87,7 +87,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/online-orders">
+            <Link to="/online-orders">
               <SmallBox>
                 <BookOnlineIcon fontSize="large" />
               </SmallBox>
@@ -95,7 +95,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/offline-orders">
+            <Link to="/offline-orders">
               <SmallBox>
                 <LocalMallIcon fontSize="large" />
               </SmallBox>
@@ -103,7 +103,7 @@ const Shortcuts = () => {
             </Link>
           </InvisibleBox>
           <InvisibleBox>
-            <Link to="/dashboard/reports">
+            <Link to="/reports">
               <SmallBox>
                 <AssessmentIcon fontSize="large" />
               </SmallBox>

@@ -1,5 +1,6 @@
 import {
   SET_COMPANYLIST,
+  SET_COMPANY_DETAILS,
   SET_COMPANY_LOADING,
   SET_SELECTED_COMPANY,
 } from "./types";
@@ -8,6 +9,7 @@ import {
  * @desc Set Companylist
  */
 export const setCompanylist = (payload) => {
+  console.log("payload", payload);
   return {
     type: SET_COMPANYLIST,
     payload,
@@ -30,6 +32,16 @@ export const setCompanyLoading = (payload) => {
 export const setSelectedCompany = (payload) => {
   return {
     type: SET_SELECTED_COMPANY,
+    payload,
+  };
+};
+
+/**
+ * @desc Set Company Details
+ */
+export const setCompanyDetails = (payload) => {
+  return {
+    type: SET_COMPANY_DETAILS,
     payload,
   };
 };

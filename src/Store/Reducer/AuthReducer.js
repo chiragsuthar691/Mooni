@@ -1,3 +1,4 @@
+import { isEmpty } from "../../Helper/Common";
 import {
   SET_AUTH_LOADING,
   SET_AUTH_TOKEN,
@@ -7,11 +8,10 @@ import {
 
 const initialState = {
   user: {},
-  isauthenticated: "",
+  isAuthenticated: "",
   errors: {},
   loading: false,
   authToken: "",
-  currentUser: {},
 };
 
 const authReducer = (state = initialState, action) => {
@@ -23,7 +23,11 @@ const authReducer = (state = initialState, action) => {
     case SET_AUTH_TOKEN:
       return { ...state, authToken: action.payload };
     case SET_CURRENT_USER:
-      return { ...state, currentUser: action.payload };
+      return {
+        ...state,
+        isAuthenticated: !isEmpty(action.payload),
+        user: action.payload,
+      };
     default:
       return state;
   }

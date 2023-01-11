@@ -7,6 +7,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Services/authService";
 import Loading from "../../Components/Loading";
+import { APP_INIT_RESPONSE_TYPE } from "../../Global/Constant";
+import UserPreferenceSingleton from "../../Helper/UserPrefenceSingleton";
+import { useCallback, useEffect } from "react";
+import store from "../../Store/Store";
 
 const userData = {
   email: "",
@@ -16,20 +20,52 @@ const userData = {
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const companySelector = useSelector((state) => state.company);
+  const { companylist } = companySelector;
   const stateSelector = useSelector((state) => state.auth);
-  const { loading, currentUser } = stateSelector;
+  const { loading } = stateSelector;
+
+  const submitHandle = useCallback(
+    async (values) => {
+      const user = {
+        username: values.email?.trim(),
+        password: values.password,
+      };
+      const appInItResult = await dispatch(login(user));
+      console.log("appInItResult", appInItResult);
+      if (
+        appInItResult &&
+        appInItResult.type === APP_INIT_RESPONSE_TYPE.REDIRECT
+      ) {
+        navigate(appInItResult.path);
+      } else if (
+        appInItResult &&
+        appInItResult.type === APP_INIT_RESPONSE_TYPE.SUCCESS
+      ) {
+        const state = store.getState();
+        const { company } = state;
+        if (company?.companylist?.length >= 1) navigate("select-organization");
+        else navigate("/");
+        const companyId = UserPreferenceSingleton.getInstance().getCompanyId();
+        if (companyId) {
+          // dispatch(getUpdatedContactList(companyId));
+          // dispatch(getItemsList(companyId));
+        }
+      }
+    },
+    [dispatch, navigate]
+  );
+
+  useEffect(() => {
+    console.log("companylist", companylist, "companySelector", companySelector);
+  }, [companySelector, companylist]);
 
   const { handleBlur, handleChange, handleSubmit, errors, values, touched } =
     useFormik({
       initialValues: userData,
       validationSchema: logInSchema,
-      onSubmit: (values) => {
-        const user = {
-          username: values.email?.trim(),
-          password: values.password,
-        };
-        dispatch(login(user));
-      },
+      onSubmit: submitHandle,
+      enableReinitialize: true,
     });
 
   return (

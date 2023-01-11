@@ -1,4 +1,4 @@
-import DashboardOverview from "../Views/Dashboard/DashboardOverview";
+import DashboardOverview from "../Dashboard/DashboardOverview";
 
 const BussinesOverview = () => {
   return (

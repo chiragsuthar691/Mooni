@@ -108,5 +108,4 @@ const CreditNote = () => {
     </div>
   );
 };
-
 export default CreditNote;

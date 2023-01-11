@@ -41,7 +41,7 @@ import { replaceWhiteSpaceWithDash } from "../../Helper/Common";
 
 const AddInventory = (props) => {
   const dispatch = useDispatch();
-  const inventorySelector = useSelector((state) => state.Inventory);
+  const inventorySelector = useSelector((state) => state.inventory);
   const { inventoryItem } = inventorySelector;
 
   const { handleBlur, handleChange, handleSubmit, onBlur, errors, values } =

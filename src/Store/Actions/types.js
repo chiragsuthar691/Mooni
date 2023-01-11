@@ -5,11 +5,9 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER";
 
 /***************** Message *****************/
 export const CLR_RESPONSE_MESSAGE = "CLR_RESPONSE_MESSAGE";
-export const RES_MESSAGE = "RES_MESSAGE";
-
-/*** Orgnization Types ***************/
-export const SET_ORGANIZTION = "SET_ORGANIZTION";
-export const SET_ORG_LOADING = "SET_ORG_LOADING";
+export const RES_SUCCESS_MESSAGE = "RES_SUCCESS_MESSAGE";
+export const SET_RES_ERROR_MSG = "SET_RES_ERROR_MSG";
+export const SET_ITEM_ERROR_MSG = "SET_ITEM_ERROR_MSG";
 
 /*** Inventory Types */
 export const SET_INVENTORY_LOADING = "SET_INVENTORY_LOADING";
@@ -19,7 +17,6 @@ export const SET_INVENTORY_GALLERY_DATA = "SET_INVENTORY_GALLERY_DATA";
 
 /*** Company ***************/
 export const SET_COMPANYLIST = "SET_COMPANYLIST";
-export const SET_RES_ERROR_MSG = "SET_RES_ERROR_MSG";
-export const SET_ITEM_ERROR_MSG = "SET_ITEM_ERROR_MSG";
 export const SET_SELECTED_COMPANY = "SET_SELECTED_COMPANY";
-export const SET_COMPANY_LOADING = " SET_COMPANY_LOADING";
+export const SET_COMPANY_LOADING = "SET_COMPANY_LOADING";
+export const SET_COMPANY_DETAILS = " SET_COMPANY_DETAILS";

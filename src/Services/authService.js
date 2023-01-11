@@ -4,7 +4,7 @@ import { REACT_APP_APIURL } from "../Global/environment";
 import { saveToken } from "../Helper/AuthTokenHelper";
 import UserPreferenceSingleton from "../Helper/UserPrefenceSingleton";
 import { setAuthLoading, setCurrentUser } from "../Store/Actions/AuthAction";
-import { resMessage } from "../Store/Actions/MessageAction";
+import { setSuccessMessage } from "../Store/Actions/MessageAction";
 import { loadRequiredData } from "./BaseService";
 
 export const setLoginToken = (access_Token) => async (dispatch) => {
@@ -24,12 +24,14 @@ export const login = (payload) => async (dispatch) => {
         payload
       );
       const { data } = response.data;
+      console.log("data", data);
       UserPreferenceSingleton.getInstance().setLanguage(data?.language);
       dispatch(setLoginToken(data.token));
       return await dispatch(loadRequiredData());
-    }
+    } else return false;
   } catch (error) {
     console.log("error", error);
+    return false;
     // dispatch(displayErrorMessage());
   } finally {
     dispatch(setAuthLoading(false));
@@ -45,7 +47,7 @@ export const forgotPassword = (payload) => async (dispatch) => {
         payload
       );
       const { message } = response.data;
-      dispatch(resMessage(message));
+      dispatch(setSuccessMessage(message));
       return;
     }
   } catch (error) {

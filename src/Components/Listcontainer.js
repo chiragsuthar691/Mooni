@@ -45,21 +45,23 @@ const Listcontainer = () => {
       className="sidebar"
     >
       <ListItem button>
-        <ListItemText>
-          <YCenterDiv>
-            <DashboardIcon />
-            <LeftSpaceSpan>
-              <Link to="/dashboard/overview">Dashboard</Link>
-            </LeftSpaceSpan>
-          </YCenterDiv>
-        </ListItemText>
+        <Link to="/overview">
+          <ListItemText>
+            <YCenterDiv>
+              <DashboardIcon />
+              <LeftSpaceSpan>Dashboard</LeftSpaceSpan>
+            </YCenterDiv>
+          </ListItemText>
+        </Link>
       </ListItem>
       <Divider />
       <ListItem button divider onClick={handleInventory}>
         <ListItemText>
           <YCenterDiv>
-            <InventoryIcon />
-            <LeftSpaceSpan>Inventory</LeftSpaceSpan>
+            <Link to="additem">
+              <InventoryIcon />
+              <LeftSpaceSpan>Inventory</LeftSpaceSpan>
+            </Link>
           </YCenterDiv>
           {isOpenInventory ? (
             <DropDown>
@@ -68,16 +70,16 @@ const Listcontainer = () => {
                   <Link to="additem">Item</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/transactions">Transactions</Link>
+                  <Link to="/transactions">Transactions</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/warehouse">Warehouse</Link>
+                  <Link to="/warehouse">Warehouse</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/workbook">Workbook</Link>
+                  <Link to="/workbook">Workbook</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/product-pricing">Product Pricing</Link>
+                  <Link to="/product-pricing">Product Pricing</Link>
                 </DropDownItem>
               </div>
             </DropDown>
@@ -89,23 +91,25 @@ const Listcontainer = () => {
       <ListItem button>
         <ListItemText>
           <YCenterDiv>
-            <ContactsIcon />
-            <LeftSpaceSpan onClick={handleContact}>Contact</LeftSpaceSpan>
+            <Link to="/contact/all">
+              <ContactsIcon />
+              <LeftSpaceSpan onClick={handleContact}>Contact</LeftSpaceSpan>
+            </Link>
           </YCenterDiv>
           {isOpenContact ? (
             <DropDown>
               <div>
                 <DropDownItem>
-                  <Link to="/dashboard/contact/all">All</Link>
+                  <Link to="/contact/all">All</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/contact/customer">Customer</Link>
+                  <Link to="/contact/customer">Customer</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/contact/supplier">Supplier</Link>
+                  <Link to="/contact/supplier">Supplier</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/contact/broker">Broker</Link>
+                  <Link to="/contact/broker">Broker</Link>
                 </DropDownItem>
               </div>
             </DropDown>
@@ -118,37 +122,37 @@ const Listcontainer = () => {
       <ListItem button>
         <ListItemText>
           <YCenterDiv>
-            <PersonIcon />
-            <LeftSpaceSpan onClick={handleAccounts}>Accounts</LeftSpaceSpan>
+            <Link to="/journal-transactions">
+              <PersonIcon />
+              <LeftSpaceSpan onClick={handleAccounts}>Accounts</LeftSpaceSpan>
+            </Link>
           </YCenterDiv>
           {isOpenAccounts ? (
             <DropDown>
               <div>
                 <DropDownItem>
-                  <Link to="/dashboard/journal-transactions">
-                    Journal Transactions
-                  </Link>
+                  <Link to="/journal-transactions">Journal Transactions</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/cash-bank">Cash & Bank</Link>
+                  <Link to="/cash-bank">Cash & Bank</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/sales">Sales</Link>
+                  <Link to="/sales">Sales</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/purchase-challan">Purchase Challan</Link>
+                  <Link to="/purchase-challan">Purchase Challan</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/purchase">Purchase</Link>
+                  <Link to="/purchase">Purchase</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/sales-orders">Sales Orders</Link>
+                  <Link to="/sales-orders">Sales Orders</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/credit-notes">Credit Notes</Link>
+                  <Link to="/credit-notes">Credit Notes</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/debit-notes">Dedit Notes</Link>
+                  <Link to="/debit-notes">Dedit Notes</Link>
                 </DropDownItem>
               </div>
             </DropDown>
@@ -168,10 +172,10 @@ const Listcontainer = () => {
             <DropDown>
               <div>
                 <DropDownItem>
-                  <Link to="/dashboard/online-orders">Online</Link>
+                  <Link to="/online-orders">Online</Link>
                 </DropDownItem>
                 <DropDownItem>
-                  <Link to="/dashboard/offline-orders">Offline</Link>
+                  <Link to="/offline-orders">Offline</Link>
                 </DropDownItem>
               </div>
             </DropDown>
@@ -182,25 +186,25 @@ const Listcontainer = () => {
       </ListItem>
       <Divider light />
       <ListItem button>
-        <ListItemText>
-          <YCenterDiv>
-            <ChatIcon />
-            <LeftSpaceSpan>
-              <Link to="/dashboard/chats">Chats</Link>
-            </LeftSpaceSpan>
-          </YCenterDiv>
-        </ListItemText>
+        <Link to="/chats">
+          <ListItemText>
+            <YCenterDiv>
+              <ChatIcon />
+              <LeftSpaceSpan>Chats</LeftSpaceSpan>
+            </YCenterDiv>
+          </ListItemText>
+        </Link>
       </ListItem>
       <Divider light />
       <ListItem button>
-        <ListItemText>
-          <YCenterDiv>
-            <AssessmentIcon />
-            <LeftSpaceSpan>
-              <Link to="/dashboard/reports">Reports</Link>
-            </LeftSpaceSpan>
-          </YCenterDiv>
-        </ListItemText>
+        <Link to="/reports">
+          <ListItemText>
+            <YCenterDiv>
+              <AssessmentIcon />
+              <LeftSpaceSpan>Reports</LeftSpaceSpan>
+            </YCenterDiv>
+          </ListItemText>
+        </Link>
       </ListItem>
     </List>
   );
