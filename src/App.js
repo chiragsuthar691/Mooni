@@ -42,6 +42,15 @@ import SelectOrganization from "./Views/Organization/SelectOrganization";
 import routes from "./Routes/routesWithoutNavbar";
 import Home from "./Home";
 import DashboardRoutes from "./Routes/DashboardRoutes";
+import { setupToken } from "./Helper/AuthTokenHelper";
+import store from "./Store/Store";
+import { setCurrentUser } from "./Store/Actions/AuthAction";
+
+const token = setupToken();
+console.log("token", token);
+if (token) {
+  store.dispatch(setCurrentUser(token));
+}
 
 // function App() {
 //   return (
@@ -109,31 +118,9 @@ import DashboardRoutes from "./Routes/DashboardRoutes";
 //   );
 // }
 
-// const routeComponents = routes.map((r, i) => {
-//   if (r.private) return <ProtectedRoutes key={i} {...r} />;
-//   return <Route key={i} {...r} />;
-// });
-
-// const App = () => {
-//   return (
-//     <div className="App">
-//       <BrowserRouter>
-//         <Routes>
-//           <Route>
-//             {routeComponents}
-//             <Route exact path="/" element={<Login />} />
-//             <Route exact path="/" element={<Login />} />
-//           </Route>
-//         </Routes>
-//       </BrowserRouter>
-//     </div>
-//   );
-// };
-
 const App = () => {
   return (
     <BrowserRouter>
-      {/* <Route exact path="/" element={<Login />} /> */}
       <Home />
       <DashboardRoutes />
     </BrowserRouter>

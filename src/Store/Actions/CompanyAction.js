@@ -9,7 +9,6 @@ import {
  * @desc Set Companylist
  */
 export const setCompanylist = (payload) => {
-  console.log("payload", payload);
   return {
     type: SET_COMPANYLIST,
     payload,

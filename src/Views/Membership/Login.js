@@ -20,8 +20,6 @@ const userData = {
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const companySelector = useSelector((state) => state.company);
-  const { companylist } = companySelector;
   const stateSelector = useSelector((state) => state.auth);
   const { loading } = stateSelector;
 
@@ -32,7 +30,7 @@ const Login = () => {
         password: values.password,
       };
       const appInItResult = await dispatch(login(user));
-      console.log("appInItResult", appInItResult);
+      // console.log("appInItResult", appInItResult);
       if (
         appInItResult &&
         appInItResult.type === APP_INIT_RESPONSE_TYPE.REDIRECT
@@ -44,7 +42,8 @@ const Login = () => {
       ) {
         const state = store.getState();
         const { company } = state;
-        if (company?.companylist?.length >= 1) navigate("select-organization");
+        // console.log("company", company);
+        if (company?.companylist?.length > 1) navigate("/select-organization");
         else navigate("/");
         const companyId = UserPreferenceSingleton.getInstance().getCompanyId();
         if (companyId) {
@@ -55,10 +54,6 @@ const Login = () => {
     },
     [dispatch, navigate]
   );
-
-  useEffect(() => {
-    console.log("companylist", companylist, "companySelector", companySelector);
-  }, [companySelector, companylist]);
 
   const { handleBlur, handleChange, handleSubmit, errors, values, touched } =
     useFormik({

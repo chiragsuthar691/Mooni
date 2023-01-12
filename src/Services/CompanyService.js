@@ -1,4 +1,3 @@
-import { ListItemSecondaryAction } from "@mui/material";
 import axios from "axios";
 import { REACT_APP_APIURL } from "../Global/environment";
 import { getAPIResponseError } from "../Helper/Common";
@@ -21,7 +20,7 @@ export const getCompanyList = () => async (dispatch) => {
     dispatch(setCompanyLoading(true));
     const response = await axios.get(`${REACT_APP_APIURL}/company`);
     const { data } = response.data;
-    console.log("companylist", data);
+    // console.log("companylist", data);
     if (data.length > 0) {
       const companyId = UserPreferenceSingleton.getInstance().getCompanyId();
       let selectedCompany = {};
@@ -62,7 +61,6 @@ export const getCompanyDetails =
         `${REACT_APP_APIURL}/company/${companyId}`
       );
       const { data } = response.data;
-      console.log("companyDetails", data);
       const users = data &&
         data.length !== 0 && {
           ...data,

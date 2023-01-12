@@ -15,7 +15,6 @@ const initialState = {
 const companyReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_COMPANYLIST:
-      console.log("action.payload", action.payload);
       return { ...state, companylist: action.payload };
     case SET_COMPANY_LOADING:
       return { ...state, loading: action.payload };

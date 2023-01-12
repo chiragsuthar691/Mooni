@@ -24,7 +24,6 @@ export const login = (payload) => async (dispatch) => {
         payload
       );
       const { data } = response.data;
-      console.log("data", data);
       UserPreferenceSingleton.getInstance().setLanguage(data?.language);
       dispatch(setLoginToken(data.token));
       return await dispatch(loadRequiredData());

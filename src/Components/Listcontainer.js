@@ -45,7 +45,7 @@ const Listcontainer = () => {
       className="sidebar"
     >
       <ListItem button>
-        <Link to="/overview">
+        <Link to="/dashboard/shortcuts">
           <ListItemText>
             <YCenterDiv>
               <DashboardIcon />

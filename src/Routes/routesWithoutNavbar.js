@@ -49,7 +49,7 @@ const routes = [
     private: true,
   },
   {
-    path: "/login/select-organization",
+    path: "/select-organization",
     exact: true,
     element: (
       <ProtectedRoutes>

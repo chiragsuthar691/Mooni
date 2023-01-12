@@ -5,7 +5,7 @@ const singletonEnforcer = Symbol(); //for to check data type and every Symbol is
 
 const parseDataFile = (defaults) => {
   try {
-    const settings = localStorage.getItem("UserPreference");
+    const settings = localStorage.getItem("UserPreferences");
     if (settings) return JSON.parse(settings);
     return {};
   } catch (error) {
@@ -18,7 +18,7 @@ const containsKey = (obj, key) => ({}.hasOwnProperty.call(obj || {}, key));
 class UserPreferences {
   constructor(opts) {
     this.defaults = opts.defaults;
-    this.data = parseDataFile(opts);
+    this.data = parseDataFile(opts.defaults);
   }
   // Methods for settings ,set the data in localStorage
 
@@ -56,6 +56,12 @@ class UserPreferenceSingleton {
   }
   static get COMPANY_ID() {
     return "company_id";
+  }
+  static get EMAIL() {
+    return "email";
+  }
+  static get DISPLAY_NAME() {
+    return "display_name";
   }
   constructor() {
     this.userPreferences = new UserPreferences({

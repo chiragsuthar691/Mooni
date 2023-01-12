@@ -4,6 +4,7 @@ import UserPreferenceSingleton from "./UserPrefenceSingleton";
 
 export const setupToken = () => {
   const token = UserPreferenceSingleton.getInstance().getUserToken();
+
   if (token) {
     const decoded = jwtDecode(token);
     const currentTime = Date.now() / 1000;

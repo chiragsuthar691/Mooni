@@ -19,7 +19,8 @@ const Dashboard = () => {
       >
         <Sidebar />
       </Drawer>
-      <div className="dashboard-right fullvh">
+      {/* <div className="dashboard-right fullvh"> */}
+      <div className="dashboard-right">
         <div>
           <Outlet />
         </div>

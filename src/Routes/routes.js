@@ -26,6 +26,17 @@ import Online from "../Views/Orders/OnlineOrders";
 import Reports from "../Views/Report/Report";
 import Chats from "../Views/Chats/Chats";
 import JournalTransactions from "../Views/JournalTransactions/JournalTransactions";
+import {
+  RoleBanking,
+  RoleContact,
+  RoleDashboard,
+  RoleInventory,
+  RoleOnlineOrders,
+  RoleOrders,
+  RolePurchase,
+  RoleReports,
+  RoleSales,
+} from "../Global/Constant";
 
 /**
  * Routes Array
@@ -37,243 +48,262 @@ const routes = [
     path: "/",
     exact: true,
     element: (
-      // <ProtectedRoutes>
-      <Dashboard />
-      // </ProtectedRoutes>
+      <ProtectedRoutes>
+        <Dashboard />
+      </ProtectedRoutes>
     ),
     private: true,
     children: [
       {
-        index: true,
+        path: "dashboard",
+        // index: true,
         element: (
-          // <ProtectedRoutes>
-          <DashboardOverview />
-          // </ProtectedRoutes>
+          <ProtectedRoutes>
+            <DashboardOverview />
+          </ProtectedRoutes>
         ),
       },
       {
-        path: "overview",
+        path: "dashboard/shortcuts",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Shortcuts />
-          // </ProtectedRoutes>
+          <ProtectedRoutes>
+            <Shortcuts />
+          </ProtectedRoutes>
         ),
       },
       {
-        path: "/BussinesOverview",
+        path: "dashboard/*",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <BussinesOverview />
-          // </ProtectedRoutes>
+          <ProtectedRoutes>
+            <NotFound />
+          </ProtectedRoutes>
         ),
       },
       {
-        path: "/overview",
+        path: "dashboard/BussinesOverview",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <DashboardOverview />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleDashboard}>
+            <BussinesOverview />
+          </ProtectedRoutes>
         ),
       },
+      //  {
+      //   path: "overview",
+      //   exact: true,
+      //   element: (
+      //     // <ProtectedRoutes>
+      //     <DashboardOverview />
+      //     // </ProtectedRoutes>
+      //   ),
+      // },
       {
         path: "/additem",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <AddItem />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleInventory}>
+            <AddItem />
+          </ProtectedRoutes>
         ),
-        private: true,
       },
       {
         index: true,
         element: (
-          // <ProtectedRoutes>
-          <DashboardOverview />
-          // </ProtectedRoutes>
+          <ProtectedRoutes>
+            <DashboardOverview />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "transactions",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Transactions />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleInventory}>
+            <Transactions />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/warehouse",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Warehouse />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleInventory}>
+            <Warehouse />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/workbook",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Workbook />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleInventory}>
+            <Workbook />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/product-pricing",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <ProductPricing />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleInventory}>
+            <ProductPricing />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/contact/all",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Contact />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleContact}>
+            <Contact />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/contact/customer",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Customer />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleContact}>
+            <Customer />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/contact/supplier",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Supplier />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleContact}>
+            <Supplier />
+          </ProtectedRoutes>
         ),
+        role: RoleContact,
       },
       {
         path: "/contact/broker",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <AddBroker />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleContact}>
+            <AddBroker />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/journal-transactions",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <JournalTransactions />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleBanking}>
+            <JournalTransactions />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/cash-bank",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <CashBank />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleBanking}>
+            <CashBank />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/sales",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Sales />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleSales}>
+            <Sales />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/debit-Notes",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <DebitNote />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RolePurchase}>
+            <DebitNote />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/credit-notes",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <CreditNote />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleSales}>
+            <CreditNote />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/purchase",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Purchase />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RolePurchase}>
+            <Purchase />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/purchase-challan",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <PurchaseChallan />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RolePurchase}>
+            <PurchaseChallan />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/sales-orders",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <SalesOrder />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleOrders}>
+            <SalesOrder />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/online-orders",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Online />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleOnlineOrders}>
+            <Online />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/offline-orders",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Offline />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleOrders}>
+            <Offline />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/chats",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Chats />
-          // </ProtectedRoutes>
+          <ProtectedRoutes>
+            <Chats />
+          </ProtectedRoutes>
         ),
       },
       {
         path: "/reports",
         exact: true,
         element: (
-          // <ProtectedRoutes>
-          <Reports />
-          // </ProtectedRoutes>
+          <ProtectedRoutes role={RoleReports}>
+            <Reports />
+          </ProtectedRoutes>
+        ),
+      },
+      {
+        path: "/access-denied",
+        exact: true,
+        element: (
+          <ProtectedRoutes>
+            <AccessDenied />
+          </ProtectedRoutes>
         ),
       },
     ],
