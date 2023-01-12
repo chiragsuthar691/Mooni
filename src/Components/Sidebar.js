@@ -1,11 +1,11 @@
-import logo from "../Assets/Mooni.png";
+import logo from "../Assets/logo.png";
 import Listcontainer from "./Listcontainer";
 import UserMenu from "./UserMenu";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <div className="img-center">
+      <div className="img-center logo-border">
         <img src={logo} alt="logo" className="logo" />
       </div>
       <div>

@@ -34,10 +34,23 @@ a:hover {
   background-color: #f1f2f6;
   text-align: center;
 }
+.logo-border {
+  /* border: 2px solid black; */
+  padding: 0.5rem;
+  background-color: #dfe6e9;
+  /* background-image: linear-gradient(
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0)
+    ),
+    linear-gradient(101deg, #78e4ff, #ff48fa); */
+  /* box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5); */
+  box-shadow: 0 0 6px 0 rgba(36, 11, 177, 0.5);
+  border-radius: 20px;
+}
 .logo {
   object-fit: contain;
-  height: 6rem;
-  padding-bottom: 1rem;
+  height: 5rem;
+  /* padding-bottom: 1rem; */
 }
 .form-container {
   background-color: white;

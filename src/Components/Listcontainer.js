@@ -165,8 +165,10 @@ const Listcontainer = () => {
       <ListItem button>
         <ListItemText>
           <YCenterDiv>
-            <ShoppingCartIcon />
-            <LeftSpaceSpan onClick={handleOrders}>Orders</LeftSpaceSpan>
+            <Link to="/online-orders">
+              <ShoppingCartIcon />
+              <LeftSpaceSpan onClick={handleOrders}>Orders</LeftSpaceSpan>
+            </Link>
           </YCenterDiv>
           {isOpenOrders ? (
             <DropDown>

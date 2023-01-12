@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
 import { Button, ErrorP, Form, StyledButton } from "../../Components/Common";
-import logo from "../../Assets/Mooni.png";
+import logo from "../../Assets/logo.png";
+// import logo from "../../Assets/logo2.png";
 import { useFormik } from "formik";
 import { logInSchema } from "../../Schema/formSchema";
 import { Link, useNavigate } from "react-router-dom";
@@ -29,6 +30,7 @@ const Login = () => {
         username: values.email?.trim(),
         password: values.password,
       };
+      // const appInItResult = await dispatch(login(user));
       const appInItResult = await dispatch(login(user));
       // console.log("appInItResult", appInItResult);
       if (
@@ -67,7 +69,7 @@ const Login = () => {
     <div className="login">
       <div className="login-container">
         <Form onSubmit={handleSubmit}>
-          <div>
+          <div className="logo-border">
             <img src={logo} alt="logo" className="logo" />
           </div>
           <div>
